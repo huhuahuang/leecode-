@@ -1,1 +1,62 @@
-sdfsdf
+1.	两个数相加(Two Sum)
+各一个整形数组，返回数组中两个数A，B的下标，并且A和B加起来为一个指定的数值。
+比如：
+Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
+
+解法一：暴力法
+vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int> ci ;
+        
+        for(int i = 0; i < nums.size(); i++)
+            for(int j = i + 1; j < nums.size(); j ++){
+                if(nums[i] + nums[j] == target){
+                    ci.push_back(i);
+                    ci.push_back(j);
+                    return ci;
+                }
+            }
+        return ci;
+    }
+
+算法复杂度：0(n*n)
+
+解法二：分析题目，试图找一些技巧方法，提高算法性能。
+分析：
+A + B = G
+B = G – A
+假设A已知，找对应的B就可以了。
+可以遍历数组，把要寻找对应的B值找出来，放到一个hash_map<B,pos>（pos为当前的下标）中。并且同时检测是否在hash_map中，如果在，则输出结果。
+代码如下：
+vector<int> twoSum(vector<int>& nums, int target) {
+        
+        map<int, int> mk ;//可以换成hash_map
+        
+        vector<int> vc;
+        int A = 0;
+        int B = 0;
+        
+        for(int i = 0 ; i < nums.size(); i++){
+            A = nums[i];
+            if(mk.find(A) != mk.end()){
+                vc.push_back(mk[A]);
+                vc.push_back(i);
+                return vc;
+            }
+            
+            int B = target - A;
+            mk[B] =  i;
+        }
+        
+        
+        
+        return vc;
+        
+    }
+
+性能分析：0(n)
+空间维护一个map或者hashmap。
+
+
