@@ -53,7 +53,7 @@ Output: false
 3) p中的任意字符（A）后面加*，"A*"可以分成，A跟s对应字符匹配first_match和A跟s对应字符下一个匹配ismatch(s+1,p)
 或者 s跟*后面的字符匹配 isMatch(s,p+2)。
 
-(```)
+``` c++
 class Solution {
 public:
     bool isMatch(string s, string p) {
@@ -76,13 +76,13 @@ public:
         
     }
 };
-(```)
+```
 
 ##解法二：
 
 再递归的基础上，增加中间结果缓存，减少递归重复计算。
 
-(```)
+``` c++
 class Solution {
 public:
     
@@ -135,4 +135,4 @@ public:
         return bl;
     }
 };
-(```)
+```
