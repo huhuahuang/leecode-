@@ -1,4 +1,4 @@
-1.	两个数相加(Two Sum)
+#1.	两个数相加(Two Sum)
 各一个整形数组，返回数组中两个数A，B的下标，并且A和B加起来为一个指定的数值。
 比如：
 Given nums = [2, 7, 11, 15], target = 9,
@@ -6,7 +6,7 @@ Given nums = [2, 7, 11, 15], target = 9,
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 
-解法一：暴力法
+##解法一：暴力法
 vector<int> twoSum(vector<int>& nums, int target) {
         vector<int> ci ;
         
@@ -23,7 +23,7 @@ vector<int> twoSum(vector<int>& nums, int target) {
 
 算法复杂度：0(n*n)
 
-解法二：分析题目，试图找一些技巧方法，提高算法性能。
+##解法二：分析题目，试图找一些技巧方法，提高算法性能。
 分析：
 A + B = G
 B = G – A
