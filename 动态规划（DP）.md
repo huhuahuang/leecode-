@@ -49,7 +49,7 @@ Output: false
 1) 普通字符匹配a-z，只需要判断是否相等就可以了。
 2) p中的'.'可以匹配s中的任意字符。
 3) p中的任意字符（A）后面加*，"A*"可以分成，A跟s对应字符匹配first_match和A跟s对应字符下一个匹配ismatch(s+1,p)
-或者 s跟*后面的字符匹配 isMatch(s,p+2).
+或者 s跟*后面的字符匹配 isMatch(s,p+2)。
 
 (```)
 class Solution {
